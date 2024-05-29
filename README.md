@@ -15,3 +15,6 @@ Crear repositorio del proyecto (Local y en GitHub) donde se deben visualizar los
 
 - Java
 - Git & GitHub
+
+## Quitar/Añadir/Corregir los puntos que faltaban del software
+Corregir/Añadir lo que me falta
