@@ -6,27 +6,34 @@ public class Main {
     static Scanner entrada = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("----------------------------------------------------");
-        System.out.println("Ingrese su Nombre:	(Catalina)");
-        String Nombre = entrada.nextLine();
-        System.out.println("Ingrese su Numero de cuenta:	(23140972)");
-        String Num_cuenta = entrada.nextLine();
-        System.out.println("Ingrese su Nip:		(8002)");
-        int Nip = entrada.nextInt();
-        System.out.println("----------------------------------------------------");
-        if (Nombre.equals("Catalina") && Num_cuenta.equals("23140972") && Nip == 8002) {
-            System.out.println("===============================================");
-            System.out.print(Nombre);
-            Clase_Abstractaa mesajero = new Consulta();
-            mesajero.setSaldo(1700);
-            mesajero.Operaciones();
-        } else {
-            System.out.println("===============================================");
-            System.out.println("Alguno de sus datos es erroneo, intente denuevo");
-            System.out.println("===============================================");
+        boolean datosCorrectos = false;
 
+        while (!datosCorrectos) {
+            System.out.println("----------------------------------------------------");
+            System.out.println("Ingrese su Nombre: (Catalina)");
+            String nombre = entrada.nextLine();
+            System.out.println("Ingrese su Numero de cuenta: (23140972)");
+            String numCuenta = entrada.nextLine();
+            System.out.println("Ingrese su Nip: (8002)");
+            int nip = entrada.nextInt();
+            entrada.nextLine(); // Consumir la nueva línea pendiente
+            System.out.println("----------------------------------------------------");
+
+            if (nombre.equals("Catalina") && numCuenta.equals("23140972") && nip == 8002) {
+                datosCorrectos = true;
+                System.out.println("===============================================");
+                System.out.print(nombre);
+                Clase_Abstractaa mensajero = new Consulta();
+                mensajero.setSaldo(1700);
+                mensajero.Operaciones();
+            } else {
+                System.out.println("===============================================");
+                System.out.println("Alguno de sus datos es erroneo, intente de nuevo");
+                System.out.println("===============================================");
+            }
         }
     }
+    
 
     public String getNombre() {
         return getNombre();
